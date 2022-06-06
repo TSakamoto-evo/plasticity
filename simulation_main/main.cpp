@@ -11,29 +11,29 @@ int main(int argc, char *argv[]){
   int para_index;
 
   if(argc == 20){
-  sscanf(argv[1], "%d", &var_run_index);
-  sscanf(argv[2], "%d", &var_pop_size);
-  sscanf(argv[3], "%d", &var_dev_period);
-  sscanf(argv[4], "%d", &var_sep);
-  sscanf(argv[5], "%lf", &var_alpha);
-  sscanf(argv[6], "%lf", &var_mu_g);
-  sscanf(argv[7], "%lf", &var_mu_b);
-  sscanf(argv[8], "%lf", &var_mu_c);
-  sscanf(argv[9], "%lf", &var_sig);
-  sscanf(argv[10], "%lf", &var_criteria);
-  sscanf(argv[11], "%d", &var_s1);
-  sscanf(argv[12], "%d", &var_s2);
-  sscanf(argv[13], "%d", &var_s3);
-  sscanf(argv[14], "%d", &var_s4);
-  sscanf(argv[15], "%d", &var_s5);
-  sscanf(argv[16], "%d", &var_s6);
-  sscanf(argv[17], "%d", &var_s7);
-  sscanf(argv[18], "%d", &var_s8);
-  sscanf(argv[19], "%d", &para_index);
-}else{
-  std::cout << "Error! The number of parameters is different!" << std::endl;
-  return(1);
-}
+    sscanf(argv[1], "%d", &var_run_index);
+    sscanf(argv[2], "%d", &var_pop_size);
+    sscanf(argv[3], "%d", &var_dev_period);
+    sscanf(argv[4], "%d", &var_sep);
+    sscanf(argv[5], "%lf", &var_alpha);
+    sscanf(argv[6], "%lf", &var_mu_g);
+    sscanf(argv[7], "%lf", &var_mu_b);
+    sscanf(argv[8], "%lf", &var_mu_c);
+    sscanf(argv[9], "%lf", &var_sig);
+    sscanf(argv[10], "%lf", &var_criteria);
+    sscanf(argv[11], "%d", &var_s1);
+    sscanf(argv[12], "%d", &var_s2);
+    sscanf(argv[13], "%d", &var_s3);
+    sscanf(argv[14], "%d", &var_s4);
+    sscanf(argv[15], "%d", &var_s5);
+    sscanf(argv[16], "%d", &var_s6);
+    sscanf(argv[17], "%d", &var_s7);
+    sscanf(argv[18], "%d", &var_s8);
+    sscanf(argv[19], "%d", &para_index);
+  }else{
+    std::cout << "Error! The number of parameters is different!" << std::endl;
+    return(1);
+  }
 
   Parameters para;
   para.pop_size = var_pop_size;

@@ -5,34 +5,35 @@
 #include "parameters.hpp"
 
 int main(int argc, char *argv[]){
-  int var_pop_size, var_dev_period, var_sep;
+  int var_run_index, var_pop_size, var_dev_period, var_sep;
   double var_alpha, var_mu_g, var_mu_b, var_mu_c, var_sig, var_criteria;
   int var_s1, var_s2, var_s3, var_s4, var_s5, var_s6, var_s7, var_s8;
   int para_index;
 
   if(argc == 20){
-  sscanf(argv[2], "%d", &var_pop_size);
-  sscanf(argv[3], "%d", &var_dev_period);
-  sscanf(argv[4], "%d", &var_sep);
-  sscanf(argv[5], "%lf", &var_alpha);
-  sscanf(argv[6], "%lf", &var_mu_g);
-  sscanf(argv[7], "%lf", &var_mu_b);
-  sscanf(argv[8], "%lf", &var_mu_c);
-  sscanf(argv[9], "%lf", &var_sig);
-  sscanf(argv[10], "%lf", &var_criteria);
-  sscanf(argv[11], "%d", &var_s1);
-  sscanf(argv[12], "%d", &var_s2);
-  sscanf(argv[13], "%d", &var_s3);
-  sscanf(argv[14], "%d", &var_s4);
-  sscanf(argv[15], "%d", &var_s5);
-  sscanf(argv[16], "%d", &var_s6);
-  sscanf(argv[17], "%d", &var_s7);
-  sscanf(argv[18], "%d", &var_s8);
-  sscanf(argv[19], "%d", &para_index);
-}else{
-  std::cout << "Error! The number of parameters is different!" << std::endl;
-  return(1);
-}
+    sscanf(argv[1], "%d", &var_run_index);
+    sscanf(argv[2], "%d", &var_pop_size);
+    sscanf(argv[3], "%d", &var_dev_period);
+    sscanf(argv[4], "%d", &var_sep);
+    sscanf(argv[5], "%lf", &var_alpha);
+    sscanf(argv[6], "%lf", &var_mu_g);
+    sscanf(argv[7], "%lf", &var_mu_b);
+    sscanf(argv[8], "%lf", &var_mu_c);
+    sscanf(argv[9], "%lf", &var_sig);
+    sscanf(argv[10], "%lf", &var_criteria);
+    sscanf(argv[11], "%d", &var_s1);
+    sscanf(argv[12], "%d", &var_s2);
+    sscanf(argv[13], "%d", &var_s3);
+    sscanf(argv[14], "%d", &var_s4);
+    sscanf(argv[15], "%d", &var_s5);
+    sscanf(argv[16], "%d", &var_s6);
+    sscanf(argv[17], "%d", &var_s7);
+    sscanf(argv[18], "%d", &var_s8);
+    sscanf(argv[19], "%d", &para_index);
+  }else{
+    std::cout << "Error! The number of parameters is different!" << std::endl;
+    return(1);
+  }
 
   Parameters para;
   para.pop_size = var_pop_size;
@@ -133,7 +134,7 @@ int main(int argc, char *argv[]){
 
     if(i - last_gen == suf_time){
       std::ofstream ofs2("regi_time_link.txt", std::ios::app);
-      ofs2 << para_index << "\t1\t" <<
+      ofs2 << var_run_index << "\t" << para_index << "\t1\t" <<
         (last_gen + 1) * 1.0 / para.pop_size << std::endl;
       ofs2.close();
       break;
@@ -141,7 +142,7 @@ int main(int argc, char *argv[]){
 
     if(i == max_time + suf_time){
       std::ofstream ofs2("regi_time_link.txt", std::ios::app);
-      ofs2 << para_index << "\t0\t" <<
+      ofs2 << var_run_index << "\t" << para_index << "\t0\t" <<
         max_time * 1.0 / para.pop_size << std::endl;
       break;
       ofs2.close();
