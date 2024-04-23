@@ -52,7 +52,7 @@ The results of development in hypothetical intermediate environments "regi_env_g
 C++ scripts for simulations of Wright-Fisher model that was used to generate Figures 3 and 4 are provided.
 In folder "simulation", script for simulation is present.
 Other codes were used for visualization.
-The file "detect_basin.cpp" is used to find basin boundary from simulation output (specifying time in main function).
+The file "detect_basin.cpp" is used to find basin boundary from simulation output (please specify time in main function).
 
 
 3. Folder "visualize_full_model"
